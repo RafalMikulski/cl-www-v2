@@ -1,0 +1,20 @@
+{
+	"name": "cookielookie.pl-v2",
+	"version": "1.0.0",
+	"description": "website",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RafalMikulski/cl-www-v2.git"
+	},
+	"author": "rjmikulski.dev@gmail.com",
+	"license": "UNLICENSED",
+	"private": true,
+	"bugs": {
+		"url": "https://github.com/RafalMikulski/cl-www-v2/issues"
+	},
+	"homepage": "https://github.com/RafalMikulski/cl-www-v2#readme"
+}

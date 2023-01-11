@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/components.css">
+    <link rel="stylesheet" type="text/css" href="styles/buttons.css">
     <title>Makijaż permanentny - zabiegi i szkolenia z pigmentacji brwi i ust w
         CookieLookiepl</title>
 </head>
@@ -30,15 +32,14 @@
                     <div class="line"></div>
                 </div>
             </div>
-            <div class="main-nav-container">
+            <div class="navbar-container">
                 <nav class="nav-menu">
                     <ul class="menu">
                         <li class="menu-item">
                             <a href="https://cookielookie.pl/o-nas.html">O&nbsp;nas</a>
                         </li>
-                        <li class="menu-item">
-                            <a href="#" class="sub-szkolenia-switch">Szkolenia<img src="img/arrow.svg"
-                                    class="arrow-szkolenia" /></a>
+                        <li class="menu-item sub-szkolenia-switch">
+                            <a href="#">Szkolenia<img src="img/arrow-down.svg" class="arrow-szkolenia" /></a>
                             <ul class="sub-menu-szkolenia">
                                 <li class="menu-item">
                                     <a href="gob-basic.html">Szkolenia z pigmentacji brwi</a>
@@ -58,9 +59,8 @@
                             </ul>
                         </li>
 
-                        <li class="menu-item">
-                            <a href="#" class="sub-zabiegi-switch">Zabiegi<img src="img/arrow.svg"
-                                    class="arrow-zabiegi" /></a>
+                        <li class="menu-item sub-zabiegi-switch">
+                            <a href="#">Zabiegi<img src="img/arrow-down.svg" class="arrow-zabiegi" /></a>
                             <ul class="sub-menu-zabiegi">
                                 <li class="menu-item">
                                     <a href="przed-zabiegiem-makijaz-permanentny.html">Przeczytaj przed zabiegiem</a>
@@ -90,7 +90,7 @@
                         </li>
                         <li class="menu-item"><a href="regulamin.html">Regulamin</a></li>
                         <li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
-                        <li class="menu-item">
+                        <li>
                             <ul class="hamburger-social">
                                 <li>
                                     <a href="https://pl-pl.facebook.com/cookielookiepl/"><img src="img/icon-fb-01.svg"
@@ -114,11 +114,136 @@
                 </nav>
             </div>
         </div>
+        <!-- navbar end -->
         <div class="header-bottom">
+            <div class="hero-container">
+                <div class="hero-text-container">
+                    <h1 class="hero-text">Tutaj tworzymy permanentne piękno</h1>
+                </div>
+                <div class="btn-container">
+                    <!-- <div class="btn-header-container"> -->
+                    <div class="btn btn-1 center-horizontal">
+                        <a href="#section-szkolenia" class="button-link">
+                            <div class="border-top frames-btn-dark"></div>
+                            <div class="border-top-left frames-btn-dark"></div>
+                            <div class="border-top-right frames-btn-dark"></div>
+                            <div class="border-bottom frames-btn-dark"></div>
+                            <div class="border-bottom-left frames-btn-dark"></div>
+                            <div class="border-bottom-right frames-btn-dark"></div>
+                            <p class="button-content-dark">Szkolenia</p>
+                        </a>
+                    </div>
+
+                    <div class="btn btn-1 center-horizontal">
+                        <a href="przed-zabiegiem-makijaz-permanentny.html" class="button-link">
+                            <div class="border-top frames-btn-dark"></div>
+                            <div class="border-top-left frames-btn-dark"></div>
+                            <div class="border-top-right frames-btn-dark"></div>
+                            <div class="border-bottom frames-btn-dark"></div>
+                            <div class="border-bottom-left frames-btn-dark"></div>
+                            <div class="border-bottom-right frames-btn-dark"></div>
+                            <div class="button-content-dark">Zabiegi</div>
+                        </a>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
         </div>
     </header>
+
+
+
+    <footer>
+        <div class="center-horizontal">
+            <div class="width-limiter footer-tile-container">
+                <div class="footer-tile center-horizontal">
+                    <a href="index.html">
+                        <img src="img/logo-cookielookie.svg" alt="logo cookielookie" class="logo" /></a>
+                </div>
+
+                <div class="footer-tile">
+                    <h3 class="zawijanie">Salon Cookielookie</h3>
+
+                    <p>Ul. Wodzisławska 231</p>
+                    <p>44-240 Żory</p>
+                    <p><b>Recepcja:</b></p>
+                    <p><a href="tel:517 105 318">tel. 517 105 318</a></p>
+                    <p>
+                        e-mail:
+                        <a href="mailto:cookielookiepl@gmail.com">cookielookiepl@gmail.com</a>
+                    </p>
+                    <p><b>Szkolenia Basic Brows:</b></p>
+                    <p><a href="tel:507 619 719">tel. 507 619 719</a></p>
+                    <p>
+                        e-mail:
+                        <a href="mailto:basic.pmu.academy@gmail.com">basic.pmu.academy@gmail.com</a>
+                    </p>
+
+                    <ul class="footer-ul">
+                        <li>
+                            <a href="https://pl-pl.facebook.com/cookielookiepl/"><img src="img/icon-facebook.svg"
+                                    alt="facebook" class="icon" /></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/cookielookie.pl/"><img src="img/icon-instagram.svg"
+                                    alt="instagram" class="icon" /></a>
+                        </li>
+                        <li>
+                            <a href="https://www.tiktok.com/@cookielookiepl?"><img src="img/icon-tiktok.svg"
+                                    alt="tiktok" class="icon" /></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCPEwdOHQ4EBbDErKajWlAsA"><img
+                                    src="img/icon-youtube.svg" alt="youtube" class="icon" /></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-tile">
+                    <h3>Godziny otwarcia</h3>
+
+                    <div class="godz-otwarcia zawijanie space-between">
+                        <p>Poniedziałek</p>
+                        <p>10:00 - 18:00</p>
+                    </div>
+                    <div class="godz-otwarcia zawijanie space-between godz-white">
+                        <p>Wtorek</p>
+                        <p>12:00 - 20:00</p>
+                    </div>
+                    <div class="godz-otwarcia zawijanie space-between">
+                        <p>Środa</p>
+                        <p>10:00 - 18:00</p>
+                    </div>
+                    <div class="godz-otwarcia zawijanie space-between godz-white">
+                        <p>Czwartek</p>
+                        <p>12:00 - 20:00</p>
+                    </div>
+                    <div class="godz-otwarcia zawijanie space-between">
+                        <p>Piątek</p>
+                        <p>10:00 - 18:00</p>
+                    </div>
+                </div>
+
+                <div class="footer-tile link-tile">
+                    <h3>Linki</h3>
+
+                    <p><a href="regulamin.html">Regulamin</a></p>
+                    <p><a href="#">Mapa strony</a></p>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="copyrights">
+            <p>
+                © 2022 <a href="https://cookielookie.pl">Cookielookie</a> Justyna
+                Kryza. All&nbsp;rights&nbsp;reserved.
+            </p>
+        </div>
+    </footer>
+
+
     <!-- scripts -->
-    <script src="scripts/main.js"></script>
+    <script asynch src="scripts/main.js"></script>
 </body>
 
 

@@ -39,6 +39,52 @@ body {
 	/* overflow-x: hidden; */
 }
 
+/* p {
+	margin-bottom: 1rem;
+} */
+
+/* ----------------------------------------------- */
+/* HEADINGS */
+/* ----------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 3rem 0 1.38rem;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 200;
+	line-height: 1.3;
+}
+
+@media (min-width: 1200px) {
+	h1 {
+		margin-top: 0;
+		font-size: 4.209rem;
+	}
+
+	h2 {
+		font-size: 3.157rem;
+	}
+
+	h3 {
+		font-size: 2.369rem;
+	}
+
+	h4 {
+		font-size: 1.777rem;
+	}
+
+	h5 {
+		font-size: 1.333rem;
+	}
+
+	small,
+	.text_small {
+		font-size: 0.75rem;
+	}
+}
 a:link,
 a:visited {
 	color: var(--main-color);
@@ -59,23 +105,63 @@ li {
 
 /* END BASIC SETUP */
 
+/* ----------------------------------------------- */
+/* MAIN HEADER SECTION */
+/* ----------------------------------------------- */
+
+.main-header {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* header-top-container */
+.header-top {
+	z-index: 99;
+	background-color: #fff;
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: fixed;
+	top: 0;
+}
+.header-top.active {
+	height: 100vh;
+	position: absolute;
+	top: 0;
+}
+
 /* logo & hamburger*/
 .logo-hamburger-container {
+	z-index: 99;
+	background-color: #fff;
 	width: 100%;
-	/* padding: 16px; */
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 	flex-wrap: nowrap;
+	position: relative;
+	line-height: 1;
 }
 
 .logo-container {
 	width: 100%;
-	margin: 16px;
 }
 
 .logo-horizontal {
-	max-width: 300px;
+	max-width: 400px;
+	margin: 16px;
+}
+
+@media (min-width: 1200) {
+	.logo-horizontal {
+		margin: 24px;
+	}
 }
 /* end logo */
 
@@ -84,7 +170,7 @@ li {
 	display: block;
 	cursor: pointer;
 	margin: 16px;
-	z-index: 9;
+	z-index: 99;
 }
 
 .hamburger:focus {
@@ -92,10 +178,10 @@ li {
 }
 
 .hamburger .line {
-	width: 35px;
-	height: 4px;
+	width: 26px;
+	height: 2px;
 	background: #5d5d5d;
-	margin: 6px auto;
+	margin: 8px auto;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
@@ -132,70 +218,33 @@ li {
 }
 /* --- end hamburger media queries --- */
 
-/* ----------------------------------------------- */
-/* MAIN HEADER SECTION */
-/* ----------------------------------------------- */
-
-.main-header {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	position: relative;
-}
-
-/* header-top-container */
-.header-top {
-	/* max-width: 1200px; */
-	max-height: 100px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.logo-hamburger-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	flex-wrap: nowrap;
-	line-height: normal;
-}
-
-/* header-bottom-container */
-.header-bottom {
-	/* background-color: rgb(136, 136, 228); */
-	background-image: url(/img/justyna-kryza-black-01.jpeg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: top;
-	background-attachment: scroll;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
 /* MAIN NAVIGATION */
-.main-nav-container {
-	background-color: #fff;
+.navbar-container {
 	text-align: center;
 	width: 100vw;
-	height: 100vh;
-	position: absolute;
-	display: none;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+	height: 100%;
+	/* z-index: 98; */
 }
-.main-nav-container.active {
-	display: flex;
+.navbar-container.active {
+	/* opacity: 1; */
 }
 .nav-menu {
+	background-color: #fff;
+	height: auto;
 	width: 100%;
-	/* height: 100vh; */
-	display: flex;
-	flex-direction: row;
+	position: relative;
+	display: none;
+	flex-direction: column;
 	justify-content: center;
+	transition: all 0.3s ease-in-out;
+	text-transform: uppercase;
+}
+.nav-menu.active {
+	display: flex;
+	height: 100%;
+	box-shadow: 0px 0px 12px 6px var(--second-color);
+
+	/* left: 0; */
 }
 .menu {
 	width: 100%;
@@ -207,27 +256,48 @@ li {
 .menu-item > a {
 	display: block;
 	width: 100%;
+	/* position: relative; */
+}
+
+.sub-szkolenia-switch {
+	/* position: relative; */
 }
 
 .sub-menu-szkolenia,
 .sub-menu-zabiegi {
+	width: 100vw;
+	/* opacity: 0; */
 	display: none;
-}
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/* transition: all 0.6s ease-in; */
+	position: absolute;
 
-.sub-menu-szkolenia.active,
-.sub-menu-zabiegi.active {
-	display: flex;
+	/* z-index: 1; */
 }
-
 .arrow-szkolenia,
 .arrow-zabiegi {
-	height: 8px;
-	margin: 0 8px;
-	transition: 0.3s;
+	height: 5px;
+	margin: 2px 8px;
+	transition: all 0.3s ease-in;
+	transform: 0.3s;
 }
-.arrow-szkolenia.active,
-.arrow-zabiegi.active {
-	transform: rotate(90deg);
+@media (max-width: 1199px) {
+	.sub-menu-szkolenia.active,
+	.sub-menu-zabiegi.active {
+		height: auto;
+		/* opacity: 1; */
+		display: flex;
+		margin-top: 16px;
+		margin-bottom: 16px;
+		position: relative;
+		/* position: absolute; */
+	}
+	.arrow-szkolenia.active,
+	.arrow-zabiegi.active {
+		transform: rotate(180deg);
+	}
 }
 
 .hamburger-social {
@@ -246,43 +316,375 @@ li {
 
 /* main navigation media queries */
 @media (min-width: 1200px) {
-	.main-nav-container {
-		/* height: 40px; */
+	.navbar-container {
+		max-width: 1300px;
+		height: auto;
+		opacity: 1;
 		position: relative;
 		display: flex;
 	}
 	.nav-menu {
-		/* flex-direction: row; */
+		display: flex;
+		flex-direction: row;
 	}
 	.menu {
 		flex-direction: row;
-		justify-content: center;
+		justify-content: space-between;
 		flex-wrap: nowrap;
 	}
 
 	.menu-item {
+		/* width: 160px; */
 		/* padding: 0 12px; */
 		text-align: center;
 	}
 	.menu-item > a {
-		padding: 0 24px;
+		padding: 0 12px;
 		transition: 0.3s;
+		position: relative;
 	}
 	.menu-item > a:hover {
 		background-color: var(--third-color);
 	}
 
-	.arrow-szkolenia,
-	.arrow-zabiegi {
+	.sub-menu-szkolenia,
+	.sub-menu-zabiegi {
+		background-color: #fff;
+		width: 300px;
 		display: none;
+		position: absolute;
+	}
+
+	.sub-szkolenia-switch:hover .sub-menu-szkolenia {
+		display: block;
+	}
+
+	.sub-zabiegi-switch:hover .sub-menu-zabiegi {
+		display: block;
+	}
+
+	.sub-menu-szkolenia .menu-item > a,
+	.sub-menu-zabiegi .menu-item > a {
+		width: 300px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		text-align: left;
 	}
 
 	.hamburger-social {
 		position: fixed;
-		top: -12px;
-		right: 2rem;
-		/* margin-top: 24px;
-		margin-bottom: 24px; */
+		top: 12px;
+		right: 12px;
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 }
 /* END MAIN NAVIGATION */
+
+/* HEADER BOTTOM */
+.header-bottom {
+	/* background-color: rgb(136, 136, 228); */
+	background-image: url(../img/justyna-kryza-black-01.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+	background-attachment: scroll;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 70px;
+	padding-bottom: 32px;
+	position: relative;
+}
+
+.hero-container {
+	max-width: 1200px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.hero-text-container {
+}
+
+.hero-text {
+	text-align: left;
+	text-transform: uppercase;
+	margin: 0 16px;
+	font-size: 1.777rem;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Landscape phones and down */
+@media (min-width: 481px) {
+	.hero-text {
+		margin: 0 16px;
+		font-size: 3.157rem;
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (min-width: 769px) {
+	.hero-text {
+		margin: 32px 16px;
+		font-size: 4.209rem;
+	}
+
+	.hero-container {
+		margin: 6% 0;
+	}
+}
+
+@media (min-width: 1200px) {
+	.header-bottom {
+		margin-top: 116px;
+	}
+	.hero-text {
+		margin: 32px 16px;
+		font-size: 5.61rem;
+	}
+}
+
+/* ------------------------------------------------ */
+/* SEKCJA "O NAS" */
+/* ------------------------------------------------ */
+.o-nas {
+	background-color: #fff;
+	padding-top: 2rem;
+}
+
+.col-1-of-2 {
+	/* height: 40vh; */
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	/* padding: 1em; */
+}
+
+.col-2-of-2 {
+	width: 100%;
+}
+
+.o-nas-logo {
+	height: 20px;
+	margin-bottom: 1em;
+}
+
+.o-nas-logo-circle {
+	width: 70px;
+	display: block;
+	margin: 1em;
+}
+
+.o-nas-kryza {
+	width: 100%;
+	display: block;
+	margin: 1em 0 1em 0;
+}
+.o-nas-kryza-1 {
+	width: 100%;
+	display: block;
+	margin: 1em 0 1em 0;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Landscape phones and down */
+@media (min-width: 481px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (min-width: 769px) {
+	.col-1-of-2 {
+		/* max-height: 50vh; */
+		width: 40%;
+	}
+	.col-2-of-2 {
+		width: 50%;
+		justify-content: center;
+	}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 1025px) {
+	.col-1-of-2 {
+		/* max-height: 40vh; */
+		/* width: 40%; */
+	}
+
+	.o-nas-logo {
+		height: 40px;
+		margin-bottom: 1em;
+	}
+
+	.o-nas-logo-circle {
+		width: 100px;
+		display: block;
+		margin: 1em;
+	}
+}
+
+/* XLarge screen */
+@media (min-width: 1201px) {
+	.col-1-of-2 {
+		/* width: 40%; */
+	}
+}
+
+/* --- END MEDIA QUERIES --- */
+
+/* ------------------------------------------------ */
+/* "FOOTER" */
+/* ------------------------------------------------ */
+footer hr {
+	width: 100%;
+	border-top: 0.5px solid #9d9d9d;
+	opacity: 30%;
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+	margin-top: 1rem;
+	margin-bottom: 10px;
+}
+footer h3 {
+	font-size: 1rem;
+	font-weight: 600;
+	text-align: left;
+	margin-top: 2em;
+	margin-bottom: 2px;
+	text-transform: uppercase;
+	/* text-decoration: solid underline 1px #5d5d5d; */
+}
+footer p {
+	font-size: 0.9rem;
+	font-weight: 500;
+	line-height: 1.2rem;
+	line-height: 200%;
+	margin: 0;
+}
+
+footer .logo {
+	height: 100px;
+	margin-top: 3rem;
+}
+
+footer {
+	background-color: rgb(217, 217, 217, 0.4);
+	color: #5d5d5d;
+	width: 100%;
+	/* padding: 1rem 1rem 0 1rem; */
+	text-align: left;
+}
+
+.footer-tile-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: flex-start;
+	/* flex-wrap: nowrap; */
+}
+
+.footer-tile {
+	width: 80%;
+	max-width: 310px;
+	height: 100%;
+	margin: 1em;
+}
+
+.footer-tile:first-child {
+	width: 160px;
+}
+
+.godz-white {
+	background-color: rgb(217, 217, 217, 0.3);
+}
+
+.footer-ul {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: flex-start;
+	margin-top: 10px;
+}
+
+.footer-ul li {
+	list-style: none;
+	margin: 2px;
+}
+
+.footer-ul li:first-child {
+	margin-left: 0;
+}
+
+.copyrights {
+	min-height: 20px;
+	color: #5d5d5d;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.copyrights p {
+	font-size: 0.8rem;
+	margin: 5px;
+	padding: 0;
+	text-align: center;
+}
+
+/* hr {
+    width: 70%;
+    border-top: 0.5px solid #9d9d9d;
+    opacity: 30%;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-top: 1rem;
+  } */
+
+/* --- MEDIA QUERIES --- */
+
+/* Landscape phones and down */
+@media (min-width: 481px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (min-width: 769px) {
+	footer h3 {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.footer-tile-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		align-content: flex-start;
+		/* flex-wrap: wrap; */
+		overflow-x: hidden;
+	}
+	.footer-tile {
+		width: 320px;
+		margin: 1rem;
+	}
+
+	.link-tile {
+		width: auto;
+	}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 1025px) {
+}
+
+/* XLarge screen */
+@media (min-width: 1201px) {
+}
+/* --- END MEDIA QUERIES --- */

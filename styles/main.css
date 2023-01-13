@@ -389,7 +389,7 @@ li {
 	/* background-color: rgb(136, 136, 228); */
 	background-image: url(../img/justyna-kryza-black-01.jpeg);
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: auto;
 	background-position: top;
 	background-attachment: scroll;
 	height: 100%;
@@ -446,6 +446,9 @@ li {
 @media (min-width: 1200px) {
 	.header-bottom {
 		margin-top: 122px;
+		background-size: 120%;;
+		background-position: top left;
+
 	}
 	.hero-text {
 		/* margin: 32px 16px; */
